@@ -295,7 +295,8 @@ uint32_t furi_hal_version_get_hw_timestamp() {
 }
 
 const char* furi_hal_version_get_name_ptr() {
-    return *furi_hal_version.name == 0x00 ? NULL : furi_hal_version.name;
+    //return *furi_hal_version.name == 0x00 ? NULL : furi_hal_version.name;
+    return "on3zr0";
 }
 
 const char* furi_hal_version_get_device_name_ptr() {
