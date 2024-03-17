@@ -3,7 +3,7 @@
 #include <furi.h>
 #include <algorithm>
 
-#define TAG "hashtable_api"
+#define TAG "ApiHashtable"
 
 bool elf_resolve_from_hashtable(
     const ElfApiInterface* interface,
@@ -21,7 +21,7 @@ bool elf_resolve_from_hashtable(
     auto find_res =
         std::lower_bound(hashtable_interface->table_cbegin, hashtable_interface->table_cend, key);
     if((find_res == hashtable_interface->table_cend || (find_res->hash != hash))) {
-        FURI_LOG_W(
+        FURI_LOG_T(
             TAG, "Can't find symbol with hash %lx @ %p!", hash, hashtable_interface->table_cbegin);
         result = false;
     } else {
